@@ -1,0 +1,12 @@
+html, body{
+	height: 100%;
+	margin: 0px;
+}
+
+.Contenedor{
+	padding: 10px;
+}
+
+.Transparente{
+	background-color: rgba(0,0,0,.3);
+}
