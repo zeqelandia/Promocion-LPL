@@ -1,0 +1,30 @@
+/*
+Paleta de Colores:
+
+Verde= rgb(43, 218, 29);
+Verde Oscuro = rgb(36, 186, 24)
+Rojo= rgb(218,37,29)
+Azul= rgb(0, 82, 155)
+Celeste= rgb(27, 157, 220)
+*/
+
+.Boton{
+	border-radius: 5px;
+	border: 1px rgb(43, 218, 29) solid;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	background: linear-gradient(rgb(43, 218, 29), rgb(36, 186, 24));
+	font-family: Helvetica;
+	color: rgb(240,240,240);
+}
+
+.Boton:active{
+	background: linear-gradient(rgb(33,202,19), rgb(46,196,34));
+}
+
+.Boton:hover{
+	border: 1px solid;
+	border-color: rgb(27, 157, 220);
+}
+
+
