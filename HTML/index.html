@@ -7,7 +7,11 @@
 	<link rel="stylesheet" type="text/css" href="../CSS/contenedores.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/index.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/imagenes.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/inputs.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/botones.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/animate.css">
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> 
+	<script type="text/javascript" src="../JS/index.js"></script>
 </head>
 <body>
 	<header>
@@ -17,13 +21,59 @@
 					<img class="MainLogo" src="../img/logo.png">
 				</div>
 				<div id="div_login">
-					<label id="lbl_login">Ingresar</label>
+					<label id="lbl_login" onclick="ingresar();">Ingresar</label>
 				</div>
 			</div>
 		</nav>
 	</header>
 	<section>
-		
+		<article>
+			<div id="contenedor_ingresar" class="Contenedor animated">
+				<form>
+					<table id="tbl">
+						<tr>
+							<td>
+								<label class="lbl">Nombre de Usuario</label>
+								<input type="button" id="btnCerrarIngreso" value="X" onclick="cerrarIngreso();">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="text" name="" class="Txt" placeholder="Ingrese su nombre de usuario">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label class="lbl">Contraseña</label>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="password" name="" class="Txt" placeholder="Ingrese su contraseña">
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<br>
+								<input type="submit" name="btnIngresar" id="btnIngresar" value="Ingresar" class="Boton">
+							</td>
+						</tr>
+						<tr>
+							<td id="filaCuenta">
+							<br>
+								<label class="lbl" id="lbl_cuenta">Todavia no tenés cuenta? Unite, es gratis!</label>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<br>
+								<input type="button" value="Crear Cuenta" class="Boton" id="btnCrearCuenta">
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</article>
 	</section>
 	<footer>
 		

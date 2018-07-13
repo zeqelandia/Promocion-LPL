@@ -1,12 +1,12 @@
 .Txt{
 	padding: 5px 10px 5px 10px;
 	border-radius: 5px;
-	border: 1px solid #86898A;
+	border: 2px solid #86898A;
 	font-family: Helvetica
 }
 
 .Txt:focus{
 	outline: none !important;
-	border: 1px solid rgb(27, 157, 220);
+	border: 2px solid rgb(27, 157, 220);
 }
 
