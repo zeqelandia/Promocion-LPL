@@ -9,13 +9,14 @@ class BaseDeDatos {
         return $resultado;
     }
     public function toString($resultado){
-        if ($resultado->num_rows>0) {
-            $contador = 0;
+        if ($resultado->num_rows==1) {
+            //$contador = 0;
             $str = "";
             //Recorrido del recordset
-            while ($registro = $resultado->fetch_object()) {
-                $contador ++;
-            }
+            //while ($registro = $resultado->fetch_object()) {
+            //    $contador ++;
+            //}
+            echo "asd";
             return $str;
         }else {
             return "null";

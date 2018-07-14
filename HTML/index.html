@@ -39,7 +39,7 @@
 						</tr>
 						<tr>
 							<td>
-								<input type="text" name="" class="Txt" placeholder="Ingrese su nombre de usuario">
+								<input type="text" id="txtUsuario" name="" class="Txt" placeholder="Ingrese su nombre de usuario">
 							</td>
 						</tr>
 						<tr>
@@ -49,19 +49,20 @@
 						</tr>
 						<tr>
 							<td>
-								<input type="password" name="" class="Txt" placeholder="Ingrese su contraseña">
+								<input type="password" id="txtContrasenna" name="" class="Txt" placeholder="Ingrese su contraseña">
 							</td>
 						</tr>
 						<tr>
 							<td>
 							<br>
-								<input type="submit" name="btnIngresar" id="btnIngresar" value="Ingresar" class="Boton">
+								<input type="button" name="btnIngresar" id="btnIngresar" value="Ingresar" class="Boton" onclick="Ajax();">
 							</td>
 						</tr>
 						<tr>
 							<td id="filaCuenta">
 							<br>
 								<label class="lbl" id="lbl_cuenta">Todavia no tenés cuenta? Unite, es gratis!</label>
+								<div id="lblError"></div>
 							</td>
 						</tr>
 						<tr>
