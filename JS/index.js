@@ -30,57 +30,7 @@ function cerrarIngreso(){
 
 }
 
-//<<<<<<< HEAD
-//elemento es una cadena que contiene que txt es
-/*function Ajax(elemento) {
-    function ObtenerXHR() {
-        req = false;
-        if (window.XMLHttpRequest) {
-            req = new XMLHttpRequest();
-        }else{
-            if (window.ActiveXObjet) {
-                req = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-        }
-        return req;
-    }
-    var peticion = ObtenerXHR();
-	txtNombreUsuario = document.getElementById("txtUsuario");
-	txtContrasennaUsuario = document.getElementById("txtContrasenna");
-	//encriptar clave y despues mandarla por get
-	txtContrasennaUsuarioEncriptada = /*encriptar(*///txtContrasennaUsuario.value/*)*/;
-    /*var enviar = "../php/login.php?usuario="+txtNombreUsuario.value+"&contrasenna="+txtContrasennaUsuarioEncriptada;
-    peticion.open("GET", enviar, true);
-    peticion.send(null);
-    peticion.onreadystatechange = revisar;
-    function revisar() {
-        var msj = document.getElementById("lblError");
-        switch (peticion.readyState) {
-            case 1:
-                msj.innerHTML = "Cargando";
-                break;
-            case 2:
-                msj.innerHTML = "Cargado";
-                break;
-            case 3:
-                msj.innerHTML = "Buscando";
-                break;
-			case 4:
-			console.log(peticion.responseText);
-			
-            if (peticion.responseText == "null") {
-                msj.innerHTML = "El usuario o contraseña son incorrectos";
-                msj.style.color = "red";
-            }else{
-                msj.innerHTML = "Esta libre";
-                msj.style.color = "green";
-            }
-                break;
-            default:
-                break;
-        }
-    } 
-//=======*/
+    
 function menuCrearCuenta(){
 	var ventanaIngreso = document.getElementById("contenedor_ingresar");
 	var ventanaLogIn = document.getElementById("contenedor_login");
@@ -125,5 +75,5 @@ function esconderAyuda(){
 	var ventanaAyuda = document.getElementById("contenedor_ayuda");
 
 	ventanaAyuda.style.visibility= "hidden";
-//>>>>>>> e1e9f91dcc6820fe470d7fc7f5695b1b5658b742
+
 }
