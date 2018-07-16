@@ -15,6 +15,8 @@
 	<script type="text/javascript" src="../JS/index.js"></script>
 	<script type="text/javascript" src="../JS/pub.js"></script>
 	<script type="text/javascript" src="../JS/compra.js"></script>
+	<script type="text/javascript" src="../JS/ingreso.js"></script>
+	<script type="text/javascript" src="../JS/registro.js"></script>
 </head>
 <body onload="publicidad();">
 	<header>
@@ -59,7 +61,7 @@
 						<tr>
 							<td>
 							<br>
-								<input type="button" name="btnIngresar" id="btnIngresar" value="Ingresar" class="Boton" onclick="Ajax();">
+								<input type="button" name="btnIngresar" id="btnIngresar" value="Ingresar" class="Boton" onclick="AjaxIngreso();">
 							</td>
 						</tr>
 						<tr>
@@ -89,7 +91,7 @@
 									<label class="lbl">Nombres</label>
 								</td>
 								<td>
-									<input type="text" name="txtNombre" class="Txt">
+									<input type="text" name="txtNombre" class="Txt" onkeyup="Nombre">
 								</td>
 							</tr>
 							<tr>
@@ -97,15 +99,15 @@
 									<label class="lbl">Apellidos</label>
 								</td>
 								<td>
-									<input type="text" name="txtApellido" class="Txt">
+									<input type="text" name="txtApellido" class="Txt" onkeyup="Apellido">
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label class="lbl">DNI</label>
+									<label class="lbl" id="lblDNI">DNI</label>
 								</td>
 								<td>
-									<input type="number" name="txtDNI" class="Txt" maxlength="8">
+									<input type="number" name="txtDNI" id="txtDNI" class="Txt" maxlength="8" onkeyup="AjaxRegistro('DNI')">
 								</td>
 							</tr>
 							<tr>
@@ -113,15 +115,15 @@
 									<label class="lbl">Teléfono</label>
 								</td>
 								<td>
-									<input type="number" name="txtTelefono" class="Txt">
+									<input type="number" name="txtTelefono" class="Txt" onkeyup="Telefono">
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label class="lbl">Mail</label>
+									<label class="lbl" id="lblMail">Mail</label>
 								</td>
 								<td>
-									<input type="email" name="txtMail" class="Txt">
+									<input type="email" name="txtMail" id="txtMail" class="Txt" onkeyup="AjaxRegistro('Mail')">
 								</td>
 							</tr>
 							<tr>
@@ -129,7 +131,7 @@
 									<label class="lbl">Pasajero frecuente?</label>
 								</td>
 								<td>
-									<select class="Txt" id="slctPasajero">
+									<select class="Txt" id="slctPasajero" onchange="Pasajero">
 										<option value="1">Si</option>
 										<option value="2">No</option>
 									</select>
@@ -138,10 +140,10 @@
 							</tr>
 							<tr>
 								<td>
-									<label class="lbl">Nickname</label>
+									<label class="lbl" id="lblnombre_usuario">Nickname</label>
 								</td>
 								<td>
-									<input type="text" name="txtNickname" class="Txt">
+									<input type="text" name="txtnombre_usuario" id="txtnombre_usuario" class="Txt" onkeyup="AjaxRegistro('nombre_usuario')">
 								</td>
 							</tr>
 							<tr>
@@ -149,7 +151,7 @@
 									<label class="lbl">Contraseña</label>
 								</td>
 								<td>
-									<input type="password" name="txtPassword" class="Txt">
+									<input type="password" name="txtPassword" class="Txt" onkeyup="Password">
 								</td>
 							</tr>
 							<tr>
@@ -158,6 +160,11 @@
 								</td>
 								<td>
 									<input type="button" id="btnCrear" value="Crear" class="Boton">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="lbl" id="lblErrorRegistro"></label>
 								</td>
 							</tr>
 						</table>
