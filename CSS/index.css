@@ -1,4 +1,3 @@
-
 #navegacion{
 	width: 100%;
 	height: 10%;
@@ -56,10 +55,6 @@ section{
 .lbl{
 	font-family: Helvetica;
 	color: rgb(240,240,240);
-}
-
-body{
-	//background-image: url("../img/cordoba1.jpg");
 }
 
 .Txt{
@@ -128,5 +123,101 @@ body{
 	margin-top: 52%;
 	padding: 2.5%;
 	visibility: hidden;
+	text-align: center;
 }
 
+#art2{
+	width: 100%;
+	height: 100%;
+}
+
+#contenedor_cuerpo{
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/ba1.jpeg);
+	background-size: 100%;
+}
+
+#contenedor_compra{
+	position: absolute;
+	background-color: rgba(0,0,0,.4);
+	width: 30%;
+	height: 37%;
+	margin-left: 20%;
+	margin-top: 8%;
+	border-radius: 20px;
+	border: 1px solid white;
+}
+
+#contenedor_pub{
+	position: absolute;
+	width: 20%;
+	height: 23%;
+	margin-left: 55%;
+	margin-top: 12%;
+	border: 1px solid white;
+	border-radius: 20px;
+	background-color: rgba(0,0,0,.4);
+	text-align: center;
+}
+
+#lblDestino{
+	font-family: 'Dancing Script', cursive;
+	color: white;
+	padding: 0px;
+	margin: 0px;
+	font-size: 60px;
+}
+
+.tag{
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+	font-size: 24px;
+}
+
+#tblCompra{
+	width: 105%;
+}
+
+.trCompra{
+	width: 100%;
+}
+
+#fecha{
+	width: 86%;
+}
+
+#tdFecha{
+	width: 20%;
+}
+
+.tdCompra{
+	width: 50%;
+}
+
+#slctTarifa, #slctHora, #btnReservarTicket{
+	width: 95%;
+}
+
+.pad{
+	padding-top: 2%;
+}
+
+/*
+Buenos Aires
+60px
+
+Rosario
+70
+
+Cordoba
+70
+
+Mar Del Plata
+55
+
+Rio Cuarto
+70
+
+
+*/

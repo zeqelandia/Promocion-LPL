@@ -11,9 +11,12 @@
 	<link rel="stylesheet" type="text/css" href="../CSS/botones.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/animate.css">
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet"> 
 	<script type="text/javascript" src="../JS/index.js"></script>
+	<script type="text/javascript" src="../JS/pub.js"></script>
+	<script type="text/javascript" src="../JS/compra.js"></script>
 </head>
-<body>
+<body onload="publicidad();">
 	<header>
 		<nav>
 			<div id="navegacion">
@@ -27,7 +30,6 @@
 		</nav>
 	</header>
 	<section>
-	<div id="contenedor_main">
 		<article>
 			<div id="contenedor_ingresar" class="Contenedor animated">
 				<div id="contenedor_login" class="animated ventana">
@@ -41,7 +43,7 @@
 						</tr>
 						<tr>
 							<td>
-								<input type="text" name="" class="Txt" placeholder="Ingrese su nombre de usuario">
+								<input type="text" id="txtUsuario" name="" class="Txt" placeholder="Ingrese su nombre de usuario">
 							</td>
 						</tr>
 						<tr>
@@ -51,19 +53,20 @@
 						</tr>
 						<tr>
 							<td>
-								<input type="password" name="" class="Txt" placeholder="Ingrese su contraseña">
+								<input type="password" id="txtContrasenna" name="" class="Txt" placeholder="Ingrese su contraseña">
 							</td>
 						</tr>
 						<tr>
 							<td>
 							<br>
-								<input type="submit" name="btnIngresar" id="btnIngresar" value="Ingresar" class="Boton">
+								<input type="button" name="btnIngresar" id="btnIngresar" value="Ingresar" class="Boton" onclick="Ajax();">
 							</td>
 						</tr>
 						<tr>
 							<td id="filaCuenta">
 							<br>
 								<label class="lbl" id="lbl_cuenta">Todavia no tenés cuenta? Unite, es gratis!</label>
+								<div id="lblError"></div>
 							</td>
 						</tr>
 						<tr>
@@ -162,7 +165,68 @@
 				</div>
 			</div>
 		</article>
-	</div>
+		<article id="art2">
+			<div id="contenedor_cuerpo">
+				<div id="contenedor_compra" class="Contenedor">
+					<form>
+						<table id="tblCompra">
+							<tr class="trCompra">
+								<td colspan="2">
+									<select name="slctOrigen" id="slctOrigen" class="Txt" onchange="opcionesTicket(this.value); verificarOpciones();">
+										<option value="0">Elija la ciudad de origen</option>
+										<option value="1">Buenos Aires</option>
+										<option value="2">Rosario</option>
+										<option value="3">Córdoba</option>
+										<option value="4">Mar Del Plata</option>
+										<option value="5">Rio Cuarto</option>
+									</select>
+								</td>
+							</tr>
+							<tr class="trCompra">
+								<td colspan="2" class="pad">
+									<select name="slctDestino" id="slctDestino" class="Txt" onchange="verificarOpciones();">
+										<option value="0">Elija la ciudad de destino</option>
+									</select>
+								</td>
+							</tr>
+							<tr class="trCompra">
+								<td class="tdCompra pad" id="tdFecha">
+									<label class="lbl">Elija una fecha:</label>
+								</td>
+								<td class="tdCompra pad">
+									<input type="date" name="fecha" id="fecha" class="Txt">
+								</td>
+							</tr>
+							<tr>
+								<td class="pad" colspan="2">
+									<select name="slctHora" id="slctHora" class="Txt">
+										<option value="0">Elija el horario</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" class="pad">
+									<select name="slctTarifa" id="slctTarifa" class="Txt">
+										<option value="0">Elija una tarifa</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="pad" colspan="2">
+									<input type="button" name="btnReservarTicket" id="btnReservarTicket" value="Reservar Ticket" class="Boton">
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<div id="contenedor_pub">
+					<label class="tag">Viajá a</label><br>
+					<h3 id="lblDestino">Buenos Aires</h3><br>
+					<label class="tag">desde</label>
+					<label id="lblPrecio" class="tag">600$</label>
+				</div>
+			</div>
+		</article>
 	</section>
 	<footer>
 		
