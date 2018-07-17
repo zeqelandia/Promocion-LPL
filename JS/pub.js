@@ -27,7 +27,7 @@ function comprobar(){
 			destino.innerHTML= "Rosario";
 			destino.style.fontSize= "70px"; 
 			precio.innerHTML= "700$";
-			fondo.style.backgroundImage= "url(\"../img/rosario1.jpg\")";
+			fondo.style.backgroundImage= "url(\"../img/rosario2.jpg\")";
 		}else if(num==4){
 			//Rio Cuarto
 			destino.innerHTML= "Rio Cuarto";
