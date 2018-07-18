@@ -2,10 +2,14 @@ function ingresar(){
 	var ventanaIngreso = document.getElementById("contenedor_ingresar");
 	var ventanaLogIn = document.getElementById("contenedor_login");
 	var ventanaCrearCuenta = document.getElementById("contenedor_crearCuenta");
+
 	document.getElementById("contenedor_pub").style.visibility= "hidden";
 	document.getElementById("contenedor_compra").style.visibility= "hidden";
+	document.getElementById("contenedor_cuerpo").style.visibility= "hidden";
+	document.getElementById("artCompra").style.visibility= "hidden";
 
 	ventanaIngreso.classList.remove("fadeOutUp");
+	document.getElementById("artIngreso").style.visibility= "visible";
 	ventanaIngreso.style.visibility= "visible";
 	ventanaLogIn.style.visibility= "visible";
 	ventanaIngreso.classList.add("fadeInDown");
@@ -65,15 +69,24 @@ function volver(){
 	ventanaLogIn.classList.add("fadeIn");
 }
 
-function mostrarAyuda(){
+function mostrarAyuda(num){
 	var ventanaAyuda = document.getElementById("contenedor_ayuda");
+	var ventanaAyudaPerfil = document.getElementById("contenedor_ayudaPerfil");
 
-	ventanaAyuda.style.visibility= "visible";
+	if(num==1){
+		ventanaAyuda.style.visibility= "visible";
+	}else{
+		ventanaAyudaPerfil.style.visibility= "visible";
+	}
 }
 
-function esconderAyuda(){
+function esconderAyuda(num){
 	var ventanaAyuda = document.getElementById("contenedor_ayuda");
+	var ventanaAyudaPerfil = document.getElementById("contenedor_ayudaPerfil");
 
-	ventanaAyuda.style.visibility= "hidden";
-
+	if(num==1){
+		ventanaAyuda.style.visibility= "hidden";
+	}else{
+		ventanaAyudaPerfil.style.visibility= "hidden";
+	}
 }

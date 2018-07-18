@@ -7,7 +7,7 @@ function publicidad() {
 function comprobar(){
 		var destino= document.getElementById("lblDestino");
 		var precio= document.getElementById("lblPrecio");
-		var fondo= document.getElementById("contenedor_cuerpo");
+		var fondo= document.getElementById("section");
 
 		num++;
 		if (num==1) {
