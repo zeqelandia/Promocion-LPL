@@ -1,16 +1,22 @@
 //elemento es una cadena que contiene que txt es
-function AjaxRegistro(elemento) {
-    function ObtenerXHR() {
-        req = false;
-        if (window.XMLHttpRequest) {
-            req = new XMLHttpRequest();
-        }else{
-            if (window.ActiveXObjet) {
-                req = new ActiveXObject("Microsoft.XMLHTTP");
-            }
+function ObtenerXHR() {
+    req = false;
+    if (window.XMLHttpRequest) {
+        req = new XMLHttpRequest();
+    }else{
+        if (window.ActiveXObjet) {
+            req = new ActiveXObject("Microsoft.XMLHTTP");
         }
-        return req;
     }
+    return req;
+}
+function vacio(elemento){
+    var txtElemento = document.getElementById("txt"+elemento);
+    if (txtElemento == "") {
+        alert("vacio");
+    }
+}
+function AjaxRegistro(elemento) {
     var peticion = ObtenerXHR();
     txtElemento = document.getElementById("txt"+elemento);
     var enviar = "../php/registro.php?"+elemento+"="+txtElemento.value+"&consulta="+elemento;
@@ -19,7 +25,9 @@ function AjaxRegistro(elemento) {
     peticion.onreadystatechange = revisar;
     function revisar() {
         var msj = document.getElementById("lblErrorRegistro");
-        if(peticion.readyState == 4)
+        if(peticion.readyState == 4) {
+            console.log(peticion.responseText);
+            
             if (peticion.responseText == "null") {
                 msj.innerHTML = "Esta libre";
                 msj.style.color = "green";
@@ -29,3 +37,4 @@ function AjaxRegistro(elemento) {
             }
         }
     }
+}

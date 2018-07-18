@@ -91,7 +91,7 @@
 									<label class="lbl">Nombres</label>
 								</td>
 								<td>
-									<input type="text" name="txtNombre" class="Txt" onkeyup="Nombre">
+									<input type="text" name="txtNombre" class="Txt" onkeyup="vacio('Nombre');">
 								</td>
 							</tr>
 							<tr>
@@ -107,7 +107,7 @@
 									<label class="lbl" id="lblDNI">DNI</label>
 								</td>
 								<td>
-									<input type="number" name="txtDNI" id="txtDNI" class="Txt" maxlength="8" onkeyup="AjaxRegistro('DNI')">
+									<input type="number" name="txtDNI" id="txtDNI" class="Txt" minlength="8" maxlength="8" onkeyup="AjaxRegistro('DNI')">
 								</td>
 							</tr>
 							<tr>
