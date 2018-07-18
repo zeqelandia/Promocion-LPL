@@ -7,7 +7,7 @@ function publicidad() {
 function comprobar(){
 		var destino= document.getElementById("lblDestino");
 		var precio= document.getElementById("lblPrecio");
-		var fondo= document.getElementById("contenedor_cuerpo");
+		var fondo= document.getElementById("section");
 
 		num++;
 		if (num==1) {
@@ -27,7 +27,7 @@ function comprobar(){
 			destino.innerHTML= "Rosario";
 			destino.style.fontSize= "70px"; 
 			precio.innerHTML= "700$";
-			fondo.style.backgroundImage= "url(\"../img/rosario1.jpg\")";
+			fondo.style.backgroundImage= "url(\"../img/rosario2.jpg\")";
 		}else if(num==4){
 			//Rio Cuarto
 			destino.innerHTML= "Rio Cuarto";
