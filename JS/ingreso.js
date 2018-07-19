@@ -13,7 +13,7 @@ function AjaxIngreso() {
     var peticion = ObtenerXHR();
     var usuario = document.getElementById("txtUsuario");
     var contrasenna = document.getElementById("txtContrasenna");
-    var enviar = "../php/ingreso.php?usuario="+usuario.value+"&contrasenna="+contrasenna.value;
+    var enviar = "../php/ingreso.php?usuario="+usuario.value+"&contrasenna="+b64_md5(contrasenna.value);
     peticion.onreadystatechange = revisar;
     peticion.open("GET", enviar, true);
     peticion.send(null);
@@ -30,7 +30,6 @@ function AjaxIngreso() {
                 msj.innerHTML = "Buscando";
                 break;
             case 4:
-            console.log(peticion.responseText);
             if (peticion.responseText == "null") {
                 msj.innerHTML = "Usuario o contraseña incorrectos";
                 msj.style.color = "red";

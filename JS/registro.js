@@ -14,7 +14,7 @@ function ObtenerXHR() {
     return req;
 }
 function vacio(){
-    var tabla = document.getElementsByName("elementoRegistro");
+    var tabla = document.getElementsByClassName("elementoRegistro");
     var msj = document.getElementById("lblErrorRegistro");
     var vacio = false;
     for (let index = 0; index < tabla.length; index++) {
@@ -32,9 +32,7 @@ function vacio(){
 }
 function correcto(tabla,msj) {
     var tel = false;
-    //debe ser 10 pero puse 7 para que la bdd lo tome por ahora
-    if(!(tabla[3].value.length == 7)){
-        document.getElementById("lblTelefono").style.color;
+    if(!(tabla[3].value.length == 10)){
         msj.innerHTML = "El area no debe contener 0 y el numero sin el 15";
         msj.style.color = "red";
     }else{
@@ -51,6 +49,7 @@ function correcto(tabla,msj) {
         AjaxUsuario();
     }
     if (dni && tel && mail && user) {
+        document.getElementById("txtContrasenia").value = b64_md5(document.getElementById("txtContrasenna").value);
         document.getElementById("formularioRegistro").submit();
     }
 }
@@ -120,7 +119,7 @@ function AjaxUsuario() {
     var msj = document.getElementById("lblErrorRegistro");
     var peticion = ObtenerXHR();
     var txtUsuario = document.getElementById("txtNickname");
-    var enviar = "../php/registro.php?nombre_usuario="+txtUsuario.value+"&consulta=nombre_usuario";
+    var enviar = "../php/registro.php?nombre_usuario=\""+txtUsuario.value+"\"&consulta=nombre_usuario";
     peticion.open("GET", enviar, true);
     peticion.send(null);
     peticion.onreadystatechange = revisarUsuario;

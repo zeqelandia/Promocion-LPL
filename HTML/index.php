@@ -23,6 +23,7 @@
 	<script type="text/javascript" src="../JS/compra.js"></script>
 	<script type="text/javascript" src="../JS/ingreso.js"></script>
 	<script type="text/javascript" src="../JS/registro.js"></script>
+	<script type="text/javascript" src="../JS/md5.js"></script>
 </head>
 <body onload="publicidad();">
 	<header>
@@ -90,14 +91,14 @@
 					<div id="contenedor_ayuda" class="animated">
 						<label class="lbl">El programa de pasajeros frecuentes le permite sumar kilometros por cada viaje que realice. Esos kilometros pueden ser utilizados para volver a viajar!</label>
 					</div>
-					<form id="formularioRegistro">
+					<form id="formularioRegistro" method="post" action="../php/nuevoUsuario.php">
 							<table>
 								<tr>
 									<td>
 										<label class="lbl">Nombres</label>
 									</td>
 									<td>
-										<input type="text" name="elementoRegistro" class="Txt" >
+										<input type="text" name="txtNombre" id="txtNombre" class="elementoRegistro" >
 									</td>
 								</tr>
 								<tr>
@@ -105,7 +106,7 @@
 										<label class="lbl">Apellidos</label>
 									</td>
 									<td>
-										<input type="text" name="elementoRegistro" class="Txt" >
+										<input type="text" name="txtApellido" id="txtApellido" class="elementoRegistro" >
 									</td>
 								</tr>
 								<tr>
@@ -113,7 +114,7 @@
 										<label class="lbl" id="lblDNI">DNI</label>
 									</td>
 									<td>
-										<input type="number" name="elementoRegistro" id="txtDNI" class="Txt" minlength="8" maxlength="8" onkeyup="AjaxDni()">
+										<input type="number" name="txtDNI" id="txtDNI" class="elementoRegistro" minlength="8" maxlength="8" onkeyup="AjaxDni()">
 									</td>
 								</tr>
 								<tr>
@@ -121,7 +122,7 @@
 										<label class="lbl" id="lblTelefono">Teléfono</label>
 									</td>
 									<td>
-										<input type="number" name="elementoRegistro" class="Txt" >
+										<input type="number" name="txtTelefono" id="txtTelefono" class="elementoRegistro" >
 									</td>
 								</tr>
 								<tr>
@@ -129,7 +130,7 @@
 										<label class="lbl" id="lblMail">Mail</label>
 									</td>
 									<td>
-										<input type="email" name="elementoRegistro" id="txtMail" class="Txt" onkeyup="AjaxMail()">
+										<input type="email" name="txtMail" id="txtMail" class="elementoRegistro" onkeyup="AjaxMail()">
 									</td>
 								</tr>
 								<tr>
@@ -137,7 +138,7 @@
 										<label class="lbl">Pasajero frecuente?</label>
 									</td>
 									<td>
-										<select class="Txt" id="slctPasajero" onchange="Pasajero">
+										<select class="Txt" name="slctPasajero">
 											<option value="1">Si</option>
 											<option value="2">No</option>
 										</select>
@@ -149,7 +150,7 @@
 										<label class="lbl" id="lblnombre_usuario">Nickname</label>
 									</td>
 									<td>
-										<input type="text" name="elementoRegistro" id="txtNickname" class="Txt" onkeyup="AjaxUsuario()">
+										<input type="text" name="txtNickname" id="txtNickname" class="elementoRegistro" onkeyup="AjaxUsuario()">
 									</td>
 								</tr>
 								<tr>
@@ -157,7 +158,7 @@
 										<label class="lbl">Contraseña</label>
 									</td>
 									<td>
-										<input type="password" name="elementoRegistro" class="Txt">
+										<input type="password" name="txtContrasenia" id="txtContrasenia" class="elementoRegistro">
 									</td>
 								</tr>
 								<tr>

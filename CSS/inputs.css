@@ -4,7 +4,12 @@
 	border: 2px solid #86898A;
 	font-family: Helvetica
 }
-
+.elementoRegistro{
+	padding: 5px 10px 5px 10px;
+	border-radius: 5px;
+	border: 2px solid #86898A;
+	font-family: Helvetica
+}
 .Txt:focus{
 	outline: none !important;
 	border: 2px solid rgb(27, 157, 220);
