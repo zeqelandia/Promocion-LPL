@@ -49,7 +49,7 @@ function correcto(tabla,msj) {
         AjaxUsuario();
     }
     if (dni && tel && mail && user) {
-        document.getElementById("txtContrasenia").value = b64_md5(document.getElementById("txtContrasenna").value);
+        document.getElementById("txtContrasenia").value = b64_md5(document.getElementById("txtContrasenia").value);
         document.getElementById("formularioRegistro").submit();
     }
 }
