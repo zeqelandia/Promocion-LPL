@@ -35,8 +35,7 @@ function AjaxIngreso() {
                 msj.innerHTML = "Usuario o contraseña incorrectos";
                 msj.style.color = "red";
             }else{
-                msj.innerHTML = "Login";
-                msj.style.color = "green";
+                location.href="user.php"
             }
                 break;
             default:

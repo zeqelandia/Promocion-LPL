@@ -5,6 +5,10 @@ if (isset($_GET['usuario']) && isset($_GET['contrasenna'])) {
     $consultaStr = "SELECT nombre_usuario, contrasenia FROM usuarios WHERE nombre_usuario = \"".$_GET['usuario']."\" and contrasenia = \"".$_GET['contrasenna']."\"";
     $consulta = $bdd->consultar($consultaStr);
     $str = $bdd->toString($consulta);
+    if ($str == "yes") {
+        session_start();
+        $_SESSION['userLogin'] = $_GET['usuario'];
+    }
     echo $str;
 }else {
     echo "null";

@@ -1,5 +1,5 @@
 function cerrarSesion(){
-	window.location.href = ("index.html");
+	window.location.href = ("../php/cerrarSesion.php");
 }
 
 function editarPerfil(){

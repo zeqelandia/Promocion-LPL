@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+    if(!empty($_SESSION['userLogin'])) {
+        header('Location: user.php');
+    }
+?>
 <html>
 <head>
 	<title>Dont Go Travel</title>

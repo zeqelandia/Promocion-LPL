@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+    if(empty($_SESSION['userLogin'])) {
+        header('Location: index.php');
+    }
+?>
 <html>
 <head>
 	<title>Dont Go Travel - Bienvenido!</title>
@@ -30,7 +36,7 @@
 					<table id="tblUsuario">
 						<tr>
 							<td>
-								<label class="lbl">Bienvenido usuario!</label>
+								<label class="lbl">Bienvenido <?=$_SESSION['userLogin'];?></label>
 							</td>
 							<td class="tdUsuario" onclick="comprarTickets();">
 								<label class="lbl">Comprar Tickets</label>
