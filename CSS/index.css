@@ -69,7 +69,10 @@ article{
 	font-family: Helvetica;
 	color: rgb(240,240,240);
 }
-
+.TxtLogin{
+	width: 95%;
+	font-size: 17px;
+}
 .Txt{
 	width: 95%;
 	font-size: 17px;

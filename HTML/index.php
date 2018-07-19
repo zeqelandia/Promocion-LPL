@@ -90,90 +90,90 @@
 					<div id="contenedor_ayuda" class="animated">
 						<label class="lbl">El programa de pasajeros frecuentes le permite sumar kilometros por cada viaje que realice. Esos kilometros pueden ser utilizados para volver a viajar!</label>
 					</div>
-					<form>
-						<table>
-							<tr>
-								<td>
-									<label class="lbl">Nombres</label>
-								</td>
-								<td>
-									<input type="text" name="txtNombre" class="Txt" onkeyup="vacio('Nombre');">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label class="lbl">Apellidos</label>
-								</td>
-								<td>
-									<input type="text" name="txtApellido" class="Txt" onkeyup="Apellido">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label class="lbl" id="lblDNI">DNI</label>
-								</td>
-								<td>
-									<input type="number" name="txtDNI" id="txtDNI" class="Txt" minlength="8" maxlength="8" onkeyup="AjaxRegistro('DNI')">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label class="lbl">Teléfono</label>
-								</td>
-								<td>
-									<input type="number" name="txtTelefono" class="Txt" onkeyup="Telefono">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label class="lbl" id="lblMail">Mail</label>
-								</td>
-								<td>
-									<input type="email" name="txtMail" id="txtMail" class="Txt" onkeyup="AjaxRegistro('Mail')">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label class="lbl">Pasajero frecuente?</label>
-								</td>
-								<td>
-									<select class="Txt" id="slctPasajero" onchange="Pasajero">
-										<option value="1">Si</option>
-										<option value="2">No</option>
-									</select>
-									<label class="lbl" id="lblAyuda" onmouseenter="mostrarAyuda(1);" onmouseleave="esconderAyuda(1);"><b>?</b></label>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label class="lbl" id="lblnombre_usuario">Nickname</label>
-								</td>
-								<td>
-									<input type="text" name="txtnombre_usuario" id="txtnombre_usuario" class="Txt" onkeyup="AjaxRegistro('nombre_usuario')">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label class="lbl">Contraseña</label>
-								</td>
-								<td>
-									<input type="password" name="txtPassword" class="Txt" onkeyup="Password">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<input type="button" id="btnVolver" value="Volver" class="Boton" onclick="volver();">
-								</td>
-								<td>
-									<input type="button" id="btnCrear" value="Crear" class="Boton">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label class="lbl" id="lblErrorRegistro"></label>
-								</td>
-							</tr>
-						</table>
+					<form id="formularioRegistro">
+							<table>
+								<tr>
+									<td>
+										<label class="lbl">Nombres</label>
+									</td>
+									<td>
+										<input type="text" name="elementoRegistro" class="Txt" >
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="lbl">Apellidos</label>
+									</td>
+									<td>
+										<input type="text" name="elementoRegistro" class="Txt" >
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="lbl" id="lblDNI">DNI</label>
+									</td>
+									<td>
+										<input type="number" name="elementoRegistro" id="txtDNI" class="Txt" minlength="8" maxlength="8" onkeyup="AjaxDni()">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="lbl" id="lblTelefono">Teléfono</label>
+									</td>
+									<td>
+										<input type="number" name="elementoRegistro" class="Txt" >
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="lbl" id="lblMail">Mail</label>
+									</td>
+									<td>
+										<input type="email" name="elementoRegistro" id="txtMail" class="Txt" onkeyup="AjaxMail()">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="lbl">Pasajero frecuente?</label>
+									</td>
+									<td>
+										<select class="Txt" id="slctPasajero" onchange="Pasajero">
+											<option value="1">Si</option>
+											<option value="2">No</option>
+										</select>
+										<label class="lbl" id="lblAyuda" onmouseenter="mostrarAyuda(1);" onmouseleave="esconderAyuda(1);"><b>?</b></label>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="lbl" id="lblnombre_usuario">Nickname</label>
+									</td>
+									<td>
+										<input type="text" name="elementoRegistro" id="txtNickname" class="Txt" onkeyup="AjaxUsuario()">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label class="lbl">Contraseña</label>
+									</td>
+									<td>
+										<input type="password" name="elementoRegistro" class="Txt">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="button" id="btnVolver" value="Volver" class="Boton" onclick="volver();">
+									</td>
+									<td>
+										<input type="button" id="btnCrear" value="Crear" class="Boton" onclick="vacio();">
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<label class="lbl" id="lblErrorRegistro"></label>
+									</td>
+								</tr>
+							</table>
 					</form>
 				</div>
 			</div>
