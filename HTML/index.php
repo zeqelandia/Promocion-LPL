@@ -243,7 +243,11 @@
 		</article>
 	</section>
 	<footer>
-		
+		<div id="contenedor_footer">
+			<label class="lbl">Desarrollado por</label><br>
+			<label class="lbl">Brandon Urigo y Ezequiel Silvestre</label><br>
+			<label class="lbl">UNPSJB - Laboratorio de Programación y Lenguajes - 2018</label>
+		</div>
 	</footer>
 </body>
 </html>

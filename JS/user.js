@@ -10,6 +10,8 @@ function editarPerfil(){
 	artCompra.style.visibility= "hidden";
 	artHistorial.style.visibility= "hidden";
 	artPerfil.style.visibility= "visible";
+
+	document.getElementById("contenedor_footer").style.visibility= "visible";
 }	
 
 function comprarTickets(){
@@ -20,4 +22,18 @@ function comprarTickets(){
 	artCompra.style.visibility= "visible";
 	artHistorial.style.visibility= "hidden";
 	artPerfil.style.visibility= "hidden";
+
+	document.getElementById("contenedor_footer").style.visibility= "visible";
+}
+
+function historialCompras(){
+	var artCompra = document.getElementById("artCompraUser");
+	var artPerfil= document.getElementById("artPerfil");
+	var artHistorial= document.getElementById("artHistorial");
+
+	artCompra.style.visibility= "hidden";
+	artHistorial.style.visibility= "visible";
+	artPerfil.style.visibility= "hidden";
+
+	document.getElementById("contenedor_footer").style.visibility= "hidden";
 }

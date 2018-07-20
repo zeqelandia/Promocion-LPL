@@ -58,6 +58,15 @@
 	</header>
 	<section id="section">
 		<article id="artCompraUser">
+		<div class="contenedor_titulo">
+			<table class="titulo tblTitulo">
+				<tr>
+					<td>
+						<h2>Comprar Tickets</h2>
+					</td>
+				</tr>
+			</table>
+		</div>
 		<div id="contenedor_cuerpo">
 				<div id="contenedor_compra" class="Contenedor">
 					<form>
@@ -120,6 +129,15 @@
 		</div>
 		</article>
 		<article id="artPerfil">
+				<div class="contenedor_titulo">
+					<table class="titulo tblTitulo">
+						<tr>
+							<td>
+								<h2>Editar Perfil</h2>
+							</td>
+						</tr>
+					</table>
+				</div>
 				<div id="contenedor_ayudaPerfil" class="animated">
 					<label class="lbl">El programa de pasajeros frecuentes le permite sumar kilometros por cada viaje que realice. Esos kilometros pueden ser utilizados para volver a viajar!</label>
 				</div>
@@ -186,11 +204,62 @@
 				</div>
 		</article>
 		<article id="artHistorial">
-			
+			<div class="contenedor_titulo">
+				<table class="titulo tblTitulo">
+					<tr>
+						<td>
+							<h2>Historial de Compras</h2>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div id="contenedor_historial">
+				<table id="tblHistorial" class="titulo">
+					<tr>
+						<td class="tdHistorial">
+							<label class="lbl">Fecha</label>
+						</td>
+						<td class="tdHistorial">
+							<label class="lbl">Hora</label>
+						</td>
+						<td class="tdHistorial">
+							<label class="lbl">Origen</label>
+						</td>
+						<td class="tdHistorial">
+							<label class="lbl">Destino</label>
+						</td>
+						<td class="tdHistorial">
+							<label class="lbl">Tipo de Tarifa</label>
+						</td>
+						<td class="tdHistorial">
+							<label class="lbl">Valor abonado</label>
+						</td>
+						<td class="tdHistorial">
+							<label class="lbl">Kilometros Sumados</label>
+						</td>
+					</tr>
+				</table>
+				<div id="contenedor_info">
+					<table>
+						<tr>
+							<td>
+								<label class="lbl">Cantidad total de kilometros sumados:</label>	
+							</td>
+							<td>
+								<b><label class="lbl" id="lblKilometros">0 kms</label></b>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
 		</article>
 	</section>
 	<footer>
-		
+		<div id="contenedor_footer">
+			<label class="lbl">Desarrollado por</label><br>
+			<label class="lbl">Brandon Urigo y Ezequiel Silvestre</label><br>
+			<label class="lbl">UNPSJB - Laboratorio de Programación y Lenguajes - 2018</label>
+		</div>
 	</footer>
 </body>
 </html>
