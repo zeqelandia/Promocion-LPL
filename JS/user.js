@@ -37,3 +37,13 @@ function historialCompras(){
 
 	document.getElementById("contenedor_footer").style.visibility= "hidden";
 }
+
+function aceptarCambios(){
+	document.getElementById("contenedor_confirmacionCambios").style.visibility= "hidden";
+	document.getElementById("contenedor_editarPerfil").style.visibility= "visible";
+}
+
+function mostrarConfirmacion(){
+	document.getElementById("contenedor_confirmacionCambios").style.visibility= "visible";
+	document.getElementById("contenedor_editarPerfil").style.visibility= "hidden";
+}

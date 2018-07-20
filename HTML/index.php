@@ -140,7 +140,7 @@
 									<td>
 										<select class="Txt" name="slctPasajero">
 											<option value="1">Si</option>
-											<option value="2">No</option>
+											<option value="0">No</option>
 										</select>
 										<label class="lbl" id="lblAyuda" onmouseenter="mostrarAyuda(1);" onmouseleave="esconderAyuda(1);"><b>?</b></label>
 									</td>
@@ -166,7 +166,7 @@
 										<input type="button" id="btnVolver" value="Volver" class="Boton" onclick="volver();">
 									</td>
 									<td>
-										<input type="button" id="btnCrear" value="Crear" class="Boton" onclick="vacio();">
+										<input type="button" id="btnCrear" value="Crear" class="Boton" onclick="vacio(); confirmarCuenta();">
 									</td>
 								</tr>
 								<tr>
@@ -177,6 +177,10 @@
 							</table>
 					</form>
 				</div>
+			</div>
+			<div id="contenedor_confirmacionCambios">
+				<h2 class="lbl">Cuenta creada con exito</h2>
+				<input type="button" id="btnAceptarCambios" onclick="aceptarCuenta();" class="Boton" value="Aceptar">
 			</div>
 		</article>
 		<article id="artCompra">

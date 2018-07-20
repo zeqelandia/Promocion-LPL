@@ -8,6 +8,10 @@ if (isset($_GET['usuario']) && isset($_GET['contrasenna'])) {
     if ($str == "yes") {
         session_start();
         $_SESSION['userLogin'] = $_GET['usuario'];
+        $consultarDni = "SELECT dni FROM usuarios WHERE nombre_usuario = '". $_GET['usuario'] . "'";
+        $regDni = $bdd->consultar($consultarDni);
+        $dni = $bdd->devolverValor($regDni,"dni");
+        $_SESSION['dni'] = $dni;
     }
     echo $str;
 }else {

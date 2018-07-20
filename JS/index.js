@@ -90,3 +90,19 @@ function esconderAyuda(num){
 		ventanaAyudaPerfil.style.visibility= "hidden";
 	}
 }
+
+function confirmarCuenta(){
+	document.getElementById("contenedor_ingresar").style.visibility= "hidden";
+	document.getElementById("contenedor_login").style.visibility= "hidden";
+	document.getElementById("contenedor_crearCuenta").style.visibility= "hidden";
+	document.getElementById("contenedor_confirmacionCambios").style.visibility= "visible";
+}
+
+function aceptarCuenta(){
+	document.getElementById("contenedor_ingresar").style.visibility= "visible";
+	document.getElementById("contenedor_login").style.visibility= "visible";
+	document.getElementById("contenedor_crearCuenta").style.visibility= "visible";
+	document.getElementById("contenedor_confirmacionCambios").style.visibility= "hidden";
+
+	volver();
+}

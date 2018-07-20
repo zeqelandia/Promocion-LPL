@@ -345,6 +345,20 @@ article{
 	margin-left: 36%;
 }
 
+#contenedor_confirmacionCambios{
+	width: 25%;
+	height: 17%;
+	background-color: rgba(0,0,0,.6);
+	border-radius: 6px;
+	border: 1px white solid;
+	padding: 1%;
+	text-align: center;
+	margin-left: 36.6%;
+	margin-top: 10%;
+	position: absolute;
+	visibility: hidden;
+}
+
 /*
 Buenos Aires
 60px

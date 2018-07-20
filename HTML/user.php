@@ -24,6 +24,8 @@
 	<script type="text/javascript" src="../JS/ingreso.js"></script>
 	<script type="text/javascript" src="../JS/registro.js"></script>
 	<script type="text/javascript" src="../JS/user.js"></script>
+	<script type="text/javascript" src="../JS/editarUsuario.js"></script>
+	<script type="text/javascript" src="../JS/md5.js"></script>
 </head>
 <body onload="publicidad();">
 	<header>
@@ -142,13 +144,14 @@
 					<label class="lbl">El programa de pasajeros frecuentes le permite sumar kilometros por cada viaje que realice. Esos kilometros pueden ser utilizados para volver a viajar!</label>
 				</div>
 				<div id="contenedor_editarPerfil">
+				<form action="" method="post">
 					<table id="tblEditarPerfil">
 						<tr>
 							<td>
 								<label class="lbl">Nombres</label>
 							</td>
 							<td>
-								<input type="text" name="txtNombrePerfil" class="Txt">
+								<input type="text" name="txtNombrePerfil" id="nombres" class="Txt">
 							</td>
 						</tr>
 						<tr>
@@ -156,7 +159,7 @@
 								<label class="lbl">Apellidos</label>
 							</td>
 							<td>
-								<input type="text" name="txtApellidoPerfil" class="Txt">
+								<input type="text" name="txtApellidoPerfil" id="apellidos" class="Txt">
 							</td>
 						</tr>
 						<tr>
@@ -164,7 +167,7 @@
 								<label class="lbl">Teléfono</label>
 							</td>
 							<td>
-								<input type="number" name="txtTelefonoPerfil" class="Txt">
+								<input type="number" name="txtTelefonoPerfil" id="telefono" class="Txt">
 							</td>
 						</tr>
 						<tr>
@@ -172,7 +175,7 @@
 								<label class="lbl" id="lblMailPerfil">Mail</label>
 							</td>
 							<td>
-								<input type="email" name="txtMail" id="txtMailPerfil" class="Txt">
+								<input type="email" name="txtMail" id="mail" class="Txt" onkeyup="revisarMail();">
 							</td>
 						</tr>
 						<tr>
@@ -180,9 +183,10 @@
 								<label class="lbl">Pasajero frecuente?</label>
 							</td>
 							<td>
-								<select class="Txt" id="slctPasajeroPerfil" onchange="Pasajero">
+								<select class="Txt" id="pasajero_frecuente" >
+									<option value="-1">Selecciona una opcion</option>
 									<option value="1">Si</option>
-									<option value="2">No</option>
+									<option value="0">No</option>
 								</select>
 								<label class="lbl" id="lblAyudaPerfil" onmouseenter="mostrarAyuda(2);" onmouseleave="esconderAyuda(2);"><b>?</b></label>
 							</td>
@@ -192,15 +196,25 @@
 								<label class="lbl">Contraseña</label>
 							</td>
 							<td>
-								<input type="password" name="txtPassword" class="Txt" onkeyup="Password">
+								<input type="password" name="txtPassword" id="contrasenia" class="Txt" onkeyup="Password">
 							</td>
 						</tr>
 						<tr>
 							<td colspan="2">
-								<input type="button" id="btnEditarPerfil" value="Realizar Cambios" class="Boton">
+								<input type="button" id="btnEditarPerfil" value="Realizar Cambios" class="Boton" onclick=" enviar(); mostrarConfirmacion();">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<label id="lblErrorEditar"></label>
 							</td>
 						</tr>
 					</table>
+					</form>
+				</div>
+				<div id="contenedor_confirmacionCambios">
+					<h2 class="lbl">Cambios realizados con exito</h2>
+					<input type="button" id="btnAceptarCambios" onclick="aceptarCambios();" class="Boton" value="Aceptar">
 				</div>
 		</article>
 		<article id="artHistorial">

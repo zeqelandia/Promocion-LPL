@@ -1,7 +1,6 @@
 var dni = false;
 var mail = false;
 var user = false;
-//elemento es una cadena que contiene que txt es
 function ObtenerXHR() {
     req = false;
     if (window.XMLHttpRequest) {
