@@ -201,7 +201,7 @@
 						</tr>
 						<tr>
 							<td colspan="2">
-								<input type="button" id="btnEditarPerfil" value="Realizar Cambios" class="Boton" onClick="enviar();">
+								<input type="button" id="btnEditarPerfil" value="Realizar Cambios" class="Boton" onclick=" enviar(); mostrarConfirmacion();">
 							</td>
 						</tr>
 						<tr>
@@ -211,6 +211,10 @@
 						</tr>
 					</table>
 					</form>
+				</div>
+				<div id="contenedor_confirmacionCambios">
+					<h2 class="lbl">Cambios realizados con exito</h2>
+					<input type="button" id="btnAceptarCambios" onclick="aceptarCambios();" class="Boton" value="Aceptar">
 				</div>
 		</article>
 		<article id="artHistorial">
