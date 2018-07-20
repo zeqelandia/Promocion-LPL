@@ -8,6 +8,14 @@ class BaseDeDatos {
         $resultado = $this->baseDeDatos->query($query) or die ("No se pudo ejecutar la consulta de seleccion");
         return $resultado;
     }
+    public function devolverValor($resultado, $elemento){
+        if ($resultado->num_rows==1) {
+            $valor = $resultado->fetch_object()->$elemento;
+            return $valor;
+        }else {
+            return "null";
+        }
+    }
     public function toString($resultado){
         if ($resultado->num_rows==1) {
             return "yes";
@@ -23,7 +31,6 @@ class BaseDeDatos {
     }
     public function insertar($query){
         $this->baseDeDatos->query($query) or die ("No se pudo insertar el elemento");
-        echo "Se inserto el elemento";
     }
 }
 ?>

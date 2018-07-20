@@ -18,27 +18,14 @@ function AjaxIngreso() {
     peticion.open("GET", enviar, true);
     peticion.send(null);
     function revisar() {
-        var msj = document.getElementById("lblError");
-        switch (peticion.readyState) {
-            case 1:
-                msj.innerHTML = "Cargando";
-                break;
-            case 2:
-                msj.innerHTML = "Cargado";
-                break;
-            case 3:
-                msj.innerHTML = "Buscando";
-                break;
-            case 4:
+    var msj = document.getElementById("lblError");
+        if(peticion.readyState == 4){
             if (peticion.responseText == "null") {
                 msj.innerHTML = "Usuario o contraseña incorrectos";
                 msj.style.color = "red";
             }else{
                 location.href="user.php"
             }
-                break;
-            default:
-                break;
         }
     }
 }
