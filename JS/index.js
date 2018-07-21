@@ -99,10 +99,23 @@ function confirmarCuenta(){
 }
 
 function aceptarCuenta(){
-	document.getElementById("contenedor_ingresar").style.visibility= "visible";
+	document.getElementById("formularioRegistro").submit();
+
+	/*document.getElementById("contenedor_ingresar").style.visibility= "visible";
 	document.getElementById("contenedor_login").style.visibility= "visible";
 	document.getElementById("contenedor_crearCuenta").style.visibility= "visible";
 	document.getElementById("contenedor_confirmacionCambios").style.visibility= "hidden";
 
-	volver();
+	volver();*/
+}
+
+function aceptarInforme(){
+	document.getElementById("contenedor_informe").style.visibility= "hidden";
+	
+	ingresar();
+}
+
+function informarLogin(){
+	document.getElementById("contenedor_informe").style.visibility= "visible";
+	document.getElementById("contenedor_cuerpo").style.visibility= "hidden";
 }

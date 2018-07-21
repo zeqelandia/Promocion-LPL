@@ -87,11 +87,12 @@
 					</table>
 				</form>
 				</div>
+				<form id="formularioRegistro" method="post" action="../php/nuevoUsuario.php">
 				<div id="contenedor_crearCuenta" class="animated ventana">
 					<div id="contenedor_ayuda" class="animated">
 						<label class="lbl">El programa de pasajeros frecuentes le permite sumar kilometros por cada viaje que realice. Esos kilometros pueden ser utilizados para volver a viajar!</label>
 					</div>
-					<form id="formularioRegistro" method="post" action="../php/nuevoUsuario.php">
+					
 							<table>
 								<tr>
 									<td>
@@ -166,7 +167,7 @@
 										<input type="button" id="btnVolver" value="Volver" class="Boton" onclick="volver();">
 									</td>
 									<td>
-										<input type="button" id="btnCrear" value="Crear" class="Boton" onclick="vacio(); confirmarCuenta();">
+										<input type="button" id="btnCrear" value="Crear" class="Boton" onclick="vacio();">
 									</td>
 								</tr>
 								<tr>
@@ -175,13 +176,15 @@
 									</td>
 								</tr>
 							</table>
-					</form>
+					
 				</div>
 			</div>
 			<div id="contenedor_confirmacionCambios">
 				<h2 class="lbl">Cuenta creada con exito</h2>
 				<input type="button" id="btnAceptarCambios" onclick="aceptarCuenta();" class="Boton" value="Aceptar">
 			</div>
+			</form>
+
 		</article>
 		<article id="artCompra">
 			<div id="contenedor_cuerpo">
@@ -231,7 +234,7 @@
 							</tr>
 							<tr>
 								<td class="pad" colspan="2">
-									<input type="button" name="btnReservarTicket" id="btnReservarTicket" value="Reservar Ticket" class="Boton">
+									<input type="button" name="btnReservarTicket" id="btnReservarTicket" value="Reservar Ticket" class="Boton" onclick="informarLogin();">
 								</td>
 							</tr>
 						</table>
@@ -243,6 +246,10 @@
 					<label class="tag">desde</label>
 					<label id="lblPrecio" class="tag">600$</label>
 				</div>
+			</div>
+			<div id="contenedor_informe">
+				<h2 class="lbl">Para comprar pasajes debe estar logeado</h2>
+				<input type="button" id="btnAceptarCambios" onclick="aceptarInforme();" class="Boton" value="Aceptar">
 			</div>
 		</article>
 	</section>

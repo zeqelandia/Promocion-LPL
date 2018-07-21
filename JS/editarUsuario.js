@@ -44,6 +44,12 @@ function revisarMail() {
         mailCorrecto = true;
     }
 }
+
+function mostrarConfirmacion(){
+    document.getElementById("contenedor_confirmacionCambios").style.visibility= "visible";
+    document.getElementById("contenedor_editarPerfil").style.visibility= "hidden";
+}
+
 function cambiar(txt,valor) {
     var peticion = ObtenerXHR();
     var enviar;
@@ -71,7 +77,8 @@ function cambiar(txt,valor) {
                 msj.style.color = "red";
             }else{
                 //redireccion a pagina de cambios realizados.
-                location.href="user.php"
+                //location.href="user.php";
+                mostrarConfirmacion();
             }
         }
     }

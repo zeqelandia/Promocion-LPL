@@ -29,6 +29,14 @@ function vacio(){
         msj.style.color = "red";
     }
 }
+
+function confirmarCuenta(){
+    document.getElementById("contenedor_ingresar").style.visibility= "hidden";
+    document.getElementById("contenedor_login").style.visibility= "hidden";
+    document.getElementById("contenedor_crearCuenta").style.visibility= "hidden";
+    document.getElementById("contenedor_confirmacionCambios").style.visibility= "visible";
+}
+
 function correcto(tabla,msj) {
     var tel = false;
     if(!(tabla[3].value.length == 10)){
@@ -49,7 +57,8 @@ function correcto(tabla,msj) {
     }
     if (dni && tel && mail && user) {
         document.getElementById("txtContrasenia").value = b64_md5(document.getElementById("txtContrasenia").value);
-        document.getElementById("formularioRegistro").submit();
+        confirmarCuenta();
+        //document.getElementById("formularioRegistro").submit();
     }
 }
 function AjaxDni() {

@@ -41,6 +41,8 @@ function historialCompras(){
 function aceptarCambios(){
 	document.getElementById("contenedor_confirmacionCambios").style.visibility= "hidden";
 	document.getElementById("contenedor_editarPerfil").style.visibility= "visible";
+
+	location.href="user.php";
 }
 
 function mostrarConfirmacion(){

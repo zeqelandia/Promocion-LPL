@@ -246,7 +246,7 @@ article{
 
 #contenedor_editarPerfil{
 	width: 30%;
-	height: 50%;
+	height: 40%;
 	padding: 10px 10px 10px 10px;
 	background-color: rgba(0,0,0,.6);
 	position: absolute;
@@ -263,7 +263,7 @@ article{
 	border-radius: 6px;
 	background-color: rgba(0,0,0,.6);
 	margin-left: 67%;
-	margin-top: 24%;
+	margin-top: 21%;
 	padding: 0.6%;
 	text-align: center;
 	visibility: hidden;
@@ -348,6 +348,20 @@ article{
 #contenedor_confirmacionCambios{
 	width: 25%;
 	height: 17%;
+	background-color: rgba(0,0,0,.6);
+	border-radius: 6px;
+	border: 1px white solid;
+	padding: 1%;
+	text-align: center;
+	margin-left: 36.6%;
+	margin-top: 10%;
+	position: absolute;
+	visibility: hidden;
+}
+
+#contenedor_informe{
+	width: 25%;
+	height: 19%;
 	background-color: rgba(0,0,0,.6);
 	border-radius: 6px;
 	border: 1px white solid;

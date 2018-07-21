@@ -201,7 +201,7 @@
 						</tr>
 						<tr>
 							<td colspan="2">
-								<input type="button" id="btnEditarPerfil" value="Realizar Cambios" class="Boton" onclick=" enviar(); mostrarConfirmacion();">
+								<input type="button" id="btnEditarPerfil" value="Realizar Cambios" class="Boton" onclick=" enviar();">
 							</td>
 						</tr>
 						<tr>
