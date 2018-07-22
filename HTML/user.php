@@ -117,7 +117,7 @@
 							</tr>
 							<tr>
 								<td class="pad" colspan="2">
-									<input type="button" name="btnReservarTicket" id="btnReservarTicket" value="Reservar Ticket" class="Boton" onClick="enviar();">
+									<input type="button" name="btnReservarTicket" id="btnReservarTicket" value="Reservar Ticket" class="Boton" onClick="enviarCompra();">
 								</td>
 							</tr>
 							<tr>
@@ -207,7 +207,7 @@
 						</tr>
 						<tr>
 							<td colspan="2">
-								<input type="button" id="btnEditarPerfil" value="Realizar Cambios" class="Boton" onclick=" enviar();">
+								<input type="button" id="btnEditarPerfil" value="Realizar Cambios" class="Boton" onclick="enviar();">
 							</td>
 						</tr>
 						<tr>

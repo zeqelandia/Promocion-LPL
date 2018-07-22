@@ -45,7 +45,7 @@ function verificarOpciones(){
 			tarifa.innerHTML= 	"<option value=\"0\">Elija una tarifa</option>" + 
 							  	"<option value=\"1=700\">Tarifa normal= $700</option>"+
 							  	"<option value=\"2=210\">Tarifa promocional= $210</option>"+
-							  	"<option value=\"3=1400\">Tarifa ejecutiva= $1400</option>";
+							  	"<option value=\"3=1400\">Tarifa ejecutiva= $1400</option>"+
 							  	"<option value=\"4=1750\">Tarifa pasajeros frecuentes= 1750km</option>";
             
 			horario.innerHTML= 	"<option value\"0\">Elija el horario</option>"+
@@ -56,7 +56,7 @@ function verificarOpciones(){
 			tarifa.innerHTML= 	"<option value=\"0\">Elija una tarifa</option>" + 
 								"<option value=\"1=1200\">Tarifa normal= $1200</option>"+
 			 					"<option value=\"2=360\">Tarifa promocional= $360</option>"+
-							  	"<option value=\"3=2400\">Tarifa ejecutiva= $2400</option>";
+							  	"<option value=\"3=2400\">Tarifa ejecutiva= $2400</option>"+
 							  	"<option value=\"4=3000\">Tarifa pasajeros frecuentes= 3000km</option>";
 			
 			horario.innerHTML= 	"<option value\"0\">Elija el horario</option>"+
@@ -66,7 +66,7 @@ function verificarOpciones(){
 			tarifa.innerHTML=	"<option value=\"0\">Elija una tarifa</option>" + 
 			 					"<option value=\"1=600\">Tarifa normal= $600</option>"+
 							  	"<option value=\"2=200\">Tarifa promocional= $200</option>"+
-							  	"<option value=\"3=1200\">Tarifa ejecutiva= $1200</option>";
+							  	"<option value=\"3=1200\">Tarifa ejecutiva= $1200</option>"+
 							  	"<option value=\"4=1500\">Tarifa pasajeros frecuentes= 1500km</option>";
 
 			horario.innerHTML= 	"<option value\"0\">Elija el horario</option>"+
@@ -83,7 +83,7 @@ function verificarOpciones(){
 			tarifa.innerHTML= 	"<option value=\"0\">Elija una tarifa</option>" + 
 								"<option value=\"1=700\">Tarifa normal= $700</option>"+
 							  	"<option value=\"2=210\">Tarifa promocional= $210</option>"+
-							  	"<option value=\"3=1400\">Tarifa ejecutiva= $1400</option>";
+							  	"<option value=\"3=1400\">Tarifa ejecutiva= $1400</option>"+
 							  	"<option value=\"4=1750\">Tarifa pasajeros frecuentes= 1750km</option>";
 
 			horario.innerHTML= 	"<option value\"0\">Elija el horario</option>"+
@@ -99,7 +99,7 @@ function verificarOpciones(){
 			tarifa.innerHTML= 	"<option value=\"0\">Elija una tarifa</option>" + 
 								"<option value=\"1=1200\">Tarifa normal= $1200</option>"+
 							  	"<option value=\"2=360\">Tarifa promocional= $360</option>"+
-							  	"<option value=\"3=2400\">Tarifa ejecutiva= $2400</option>";
+							  	"<option value=\"3=2400\">Tarifa ejecutiva= $2400</option>"+
 							  	"<option value=\"4=3000\">Tarifa pasajeros frecuentes= 3000km</option>";
 
 			horario.innerHTML= 	"<option value\"0\">Elija el horario</option>"+
@@ -110,7 +110,7 @@ function verificarOpciones(){
 			tarifa.innerHTML= 	"<option value=\"0\">Elija una tarifa</option>" + 
 								"<option value=\"1=250\">Tarifa normal= $250</option>"+
 							  	"<option value=\"2=75\">Tarifa promocional= $75</option>"+
-							  	"<option value=\"3=500\">Tarifa ejecutiva= $500</option>";
+							  	"<option value=\"3=500\">Tarifa ejecutiva= $500</option>"+
 							  	"<option value=\"4=625\">Tarifa pasajeros frecuentes= 625km</option>";
 
 			horario.innerHTML= 	"<option value\"0\">Elija el horario</option>"+
@@ -126,7 +126,7 @@ function verificarOpciones(){
 			tarifa.innerHTML= 	"<option value=\"0\">Elija una tarifa</option>" + 
 								"<option value=\"1=600\">Tarifa normal= $600</option>"+
 							  	"<option value=\"2=200\">Tarifa promocional= $200</option>"+
-							  	"<option value=\"3=1200\">Tarifa ejecutiva= $1200</option>";
+							  	"<option value=\"3=1200\">Tarifa ejecutiva= $1200</option>"+
 							 	"<option value=\"4=1500\">Tarifa pasajeros frecuentes= 1500km</option>";
 
 			horario.innerHTML= 	"<option value\"0\">Elija el horario</option>"+
@@ -141,7 +141,7 @@ function verificarOpciones(){
 			tarifa.innerHTML= 	"<option value=\"0\">Elija una tarifa</option>" + 
 								"<option value=\"1=250\">Tarifa normal= $250</option>"+
 							  	"<option value=\"2=75\">Tarifa promocional= $75</option>"+
-							  	"<option value=\"3=500\">Tarifa ejecutiva= $500</option>";
+							  	"<option value=\"3=500\">Tarifa ejecutiva= $500</option>"+
 							  	"<option value=\"4=625\">Tarifa pasajeros frecuentes= 625km</option>";
 
 			horario.innerHTML= 	"<option value\"0\">Elija el horario</option>"+

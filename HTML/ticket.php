@@ -4,6 +4,11 @@
 	$bdd = new BaseDeDatos("promocion");
 	$_SESSION['nombre']= $bdd->devolverValor($bdd->consultar("SELECT nombres FROM usuarios WHERE dni = ".$_SESSION['dni']),"nombres");
 	$tarifa = $bdd->devolverValor($bdd->consultar("SELECT tipo_tarifa FROM tipo_tarifa WHERE id_tarifa = ".explode("=", $_POST['slctTarifa'])[0]),"tipo_tarifa");
+	if ($tarifa == "frecuente") {
+		$tar = explode("=", $_POST['slctTarifa'])[1]."kms";
+	}else {
+		$tar = "$".explode("=", $_POST['slctTarifa'])[1];
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -85,7 +90,7 @@
 						<label>Valor abonado:</label>
 					</td>
 					<td>
-						<label id="lblValor"><?=explode("=", $_POST['slctTarifa'])[1];?></label>
+						<label id="lblValor"><?=$tar;?></label>
 					</td>
 				</tr>
 				<tr>

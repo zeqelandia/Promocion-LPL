@@ -1,4 +1,4 @@
-function enviar() {
+function enviarCompra() {
     var tabla = ["slctOrigen","slctDestino","slctHora","slctTarifa"];
     var msj = document.getElementById("lblError");
     var consistidoFecha = false;
@@ -36,10 +36,19 @@ function comprar() {
     peticion.onreadystatechange = revisarMail;
     function revisarMail() {
         if(peticion.readyState == 4) {
-            if(peticion.responseText == "FAIL"){
-                //ERR
-            }else{
-                document.getElementById("formularioCompra").submit();
+            switch (peticion.responseText) {
+                case "FAIL":
+                    //ERR no hay asientos
+                    break;
+                case "NOFRECUENTE":
+                    //ERR no puede comprar con puntos
+                    break;
+                case "PUNTOSFALTANTES":
+                    //ERR no puede comprar faltan puntos
+                    break;
+                default:
+                    document.getElementById("formularioCompra").submit();
+                    break;
             }
         }
     }
