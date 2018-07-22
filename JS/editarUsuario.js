@@ -1,15 +1,4 @@
 var mailCorrecto = true;
-function ObtenerXHR() {
-    req = false;
-    if (window.XMLHttpRequest) {
-        req = new XMLHttpRequest();
-    }else{
-        if (window.ActiveXObjet) {
-            req = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-    }
-    return req;
-}
 function existeCorreo(mail, msj) {
     var peticion = ObtenerXHR();
     var enviar = "../php/registro.php?Mail=\""+mail.value.toUpperCase()+"\"&consulta=Mail";
@@ -76,8 +65,6 @@ function cambiar(txt,valor) {
                 msj.innerHTML = "Hmm algo raro esta pasando, vuelve a intentarlo más tarde";
                 msj.style.color = "red";
             }else{
-                //redireccion a pagina de cambios realizados.
-                //location.href="user.php";
                 mostrarConfirmacion();
             }
         }

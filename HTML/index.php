@@ -195,11 +195,11 @@
 								<td colspan="2">
 									<select name="slctOrigen" id="slctOrigen" class="Txt" onchange="opcionesTicket(this.value); verificarOpciones();">
 										<option value="0">Elija la ciudad de origen</option>
-										<option value="1">Buenos Aires</option>
-										<option value="2">Rosario</option>
-										<option value="3">Córdoba</option>
-										<option value="4">Mar Del Plata</option>
-										<option value="5">Rio Cuarto</option>
+										<option value="Buenos Aires">Buenos Aires</option>
+										<option value="Rosario">Rosario</option>
+										<option value="Cordoba">Córdoba</option>
+										<option value="Mar Del Plata">Mar Del Plata</option>
+										<option value="Rio Cuarto">Río Cuarto</option>
 									</select>
 								</td>
 							</tr>

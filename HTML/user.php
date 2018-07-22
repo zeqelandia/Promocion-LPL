@@ -26,6 +26,7 @@
 	<script type="text/javascript" src="../JS/user.js"></script>
 	<script type="text/javascript" src="../JS/editarUsuario.js"></script>
 	<script type="text/javascript" src="../JS/md5.js"></script>
+	<script type="text/javascript" src="../JS/realizarCompra.js"></script>
 </head>
 <body onload="publicidad();">
 	<header>
@@ -71,17 +72,17 @@
 		</div>
 		<div id="contenedor_cuerpo">
 				<div id="contenedor_compra" class="Contenedor">
-					<form>
+					<form method="POST" id="formularioCompra" action="ticket.php">
 						<table id="tblCompra">
 							<tr class="trCompra">
 								<td colspan="2">
 									<select name="slctOrigen" id="slctOrigen" class="Txt" onchange="opcionesTicket(this.value); verificarOpciones();">
 										<option value="0">Elija la ciudad de origen</option>
-										<option value="1">Buenos Aires</option>
-										<option value="2">Rosario</option>
-										<option value="3">Córdoba</option>
-										<option value="4">Mar Del Plata</option>
-										<option value="5">Rio Cuarto</option>
+										<option value="Buenos Aires">Buenos Aires</option>
+										<option value="Rosario">Rosario</option>
+										<option value="Cordoba">Córdoba</option>
+										<option value="Mar Del Plata">Mar Del Plata</option>
+										<option value="Rio Cuarto">Río Cuarto</option>
 									</select>
 								</td>
 							</tr>
@@ -116,7 +117,12 @@
 							</tr>
 							<tr>
 								<td class="pad" colspan="2">
-									<input type="button" name="btnReservarTicket" id="btnReservarTicket" value="Reservar Ticket" class="Boton">
+									<input type="button" name="btnReservarTicket" id="btnReservarTicket" value="Reservar Ticket" class="Boton" onClick="enviar();">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label id="lblError"></label>
 								</td>
 							</tr>
 						</table>

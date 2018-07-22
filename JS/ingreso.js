@@ -1,15 +1,4 @@
 function AjaxIngreso() {
-    function ObtenerXHR() {
-        req = false;
-        if (window.XMLHttpRequest) {
-            req = new XMLHttpRequest();
-        }else{
-            if (window.ActiveXObjet) {
-                req = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-        }
-        return req;
-    }
     var peticion = ObtenerXHR();
     var usuario = document.getElementById("txtUsuario");
     var contrasenna = document.getElementById("txtContrasenna");

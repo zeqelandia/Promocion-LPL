@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	include_once("../php/BaseDeDatos.class.php");
+	$bdd = new BaseDeDatos("promocion");
+	$_SESSION['nombre']= $bdd->devolverValor($bdd->consultar("SELECT nombres FROM usuarios WHERE dni = ".$_SESSION['dni']),"nombres");
+	$tarifa = $bdd->devolverValor($bdd->consultar("SELECT tipo_tarifa FROM tipo_tarifa WHERE id_tarifa = ".explode("=", $_POST['slctTarifa'])[0]),"tipo_tarifa");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +29,7 @@
 						<label>Pasajero:</label>
 					</td>
 					<td>
-						<label id="lblPasajero"></label>
+						<label id="lblPasajero"><?=$_SESSION['nombre'];?></label>
 					</td>
 				</tr>
 				<tr>
@@ -30,7 +37,7 @@
 						<label>Dni:</label>
 					</td>
 					<td>
-						<label id="lblDni"></label>
+						<label id="lblDni"><?=$_SESSION['dni'];?></label>
 					</td>
 				</tr>
 				<tr>
@@ -38,7 +45,7 @@
 						<label>Fecha:</label>
 					</td>
 					<td>
-						<label id="lblFecha"></label>
+						<label id="lblFecha"><?=$_POST['fecha'];?></label>
 					</td>
 				</tr>
 				<tr>
@@ -46,7 +53,7 @@
 						<label>Hora:</label>
 					</td>
 					<td>
-						<label id="lblHora"></label>
+						<label id="lblHora"><?=$_POST['slctHora'];?></label>
 					</td>
 				</tr>
 				<tr>
@@ -54,7 +61,7 @@
 						<label>Origen:</label>
 					</td>
 					<td>
-						<label id="lblOrigen"></label>
+						<label id="lblOrigen"><?=$_POST['slctOrigen'];?></label>
 					</td>
 				</tr>
 				<tr>
@@ -62,7 +69,7 @@
 						<label>Destino:</label>
 					</td>
 					<td>
-						<label id="lblDestino"></label>
+						<label id="lblDestino"><?=$_POST['slctDestino'];?></label>
 					</td>
 				</tr>
 				<tr>
@@ -70,7 +77,7 @@
 						<label>Tipo de Tarifa:</label>
 					</td>
 					<td>
-						<label id="lblTarifa"></label>
+						<label id="lblTarifa"><?=$tarifa;?></label>
 					</td>
 				</tr>
 				<tr>
@@ -78,7 +85,7 @@
 						<label>Valor abonado:</label>
 					</td>
 					<td>
-						<label id="lblValor"></label>
+						<label id="lblValor"><?=explode("=", $_POST['slctTarifa'])[1];?></label>
 					</td>
 				</tr>
 				<tr>
@@ -86,7 +93,7 @@
 						<label>Kilometros sumados:</label>
 					</td>
 					<td>
-						<label id="lblKilometros"></label>
+						<label id="lblKilometros"><?=$_SESSION['sumados'];?></label>
 					</td>
 				</tr>
 			</table>
