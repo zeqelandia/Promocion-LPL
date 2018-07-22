@@ -23,11 +23,44 @@ class BaseDeDatos {
             return "null";
         }
     }
-    public function cerrarConeccion($resultado){
-        //Libreacion de la memoria utilizada por el recordset
-        $resultado->free();
-        //Cierre de la conexion
+    public function cerrarConeccion(){
         $this->baseDeDatos->close();
+    }
+    public function valores($resultado,$frecuente){
+        if ($resultado->num_rows>0) {
+            $var = "";
+        $i = 0;
+        while ($registro = $resultado->fetch_object()) {
+            $i++;
+            $var .= $registro->fecha . "&";
+            $var .= $registro->hora . "&";
+            $var .= $registro->origen . "&";
+            $var .= $registro->destino . "&";
+            $var .= $registro->tipo_tarifa . "&";
+            $var .= $registro->valor_pagado . "&";
+            if ($frecuente != 1) {
+                $var .= "0#";
+            }else {
+                switch ($registro->tipo_tarifa) {
+                    case 'normal':
+                        $var .= floatval($registro->valor_pagado) * 0.25 ."#";
+                        break;
+                    case 'promocional':
+                        $var .= floatval($registro->valor_pagado) * 0.05 ."#";
+                        break;
+                    case 'ejecutiva':
+                        $var .= floatval($registro->valor_pagado) * 0.5 ."#";
+                        break;
+                    default:
+                        $var .= "0#";
+                        break;
+                }
+            }
+        }
+        return $var."%".$i;
+        }else {
+            return "NULL";
+        }
     }
     public function insertar($query){
         $this->baseDeDatos->query($query) or die ("No se pudo insertar el elemento");

@@ -36,6 +36,7 @@ function historialCompras(){
 	artPerfil.style.visibility= "hidden";
 
 	document.getElementById("contenedor_footer").style.visibility= "hidden";
+	cargarHistorial();
 }
 
 function aceptarCambios(){

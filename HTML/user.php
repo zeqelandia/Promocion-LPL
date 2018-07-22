@@ -3,7 +3,21 @@
     session_start();
     if(empty($_SESSION['userLogin'])) {
         header('Location: index.php');
-    }
+    }else{
+		include_once("../php/BaseDeDatos.class.php");
+		$bdd = new BaseDeDatos("promocion");
+		$consultaFrecuente = "SELECT pasajero_frecuente FROM usuarios WHERE dni = ". $_SESSION['dni'];
+        $reultadoFrecuente = $bdd->consultar($consultaFrecuente);
+        $frecuente = $bdd->devolverValor($reultadoFrecuente, "pasajero_frecuente");
+		if ($frecuente == '1') {
+			$puntos = $bdd->devolverValor($bdd->consultar("SELECT puntos FROM usuarios WHERE dni=".$_SESSION['dni']),"puntos");
+			$lblMensaje = "<label class=\"lbl\">Cantidad total de kilometros sumados: </label>";
+			$lblPuntos = "<label class=\"lbl\" id=\"lblKilometros\">" . $puntos . "</label>";
+		}else {
+			$lblMensaje = "<label class=\"lbl\">Usted no es pasajero frecuente.</label>";
+			$lblPuntos = "<label class=\"lbl\" id=\"lblKilometros\"></label>";
+		}
+	}
 ?>
 <html>
 <head>
@@ -27,6 +41,7 @@
 	<script type="text/javascript" src="../JS/editarUsuario.js"></script>
 	<script type="text/javascript" src="../JS/md5.js"></script>
 	<script type="text/javascript" src="../JS/realizarCompra.js"></script>
+	<script type="text/javascript" src="../JS/verHistorial.js"></script>
 </head>
 <body onload="publicidad();">
 	<header>
@@ -235,38 +250,15 @@
 			</div>
 			<div id="contenedor_historial">
 				<table id="tblHistorial" class="titulo">
-					<tr>
-						<td class="tdHistorial">
-							<label class="lbl">Fecha</label>
-						</td>
-						<td class="tdHistorial">
-							<label class="lbl">Hora</label>
-						</td>
-						<td class="tdHistorial">
-							<label class="lbl">Origen</label>
-						</td>
-						<td class="tdHistorial">
-							<label class="lbl">Destino</label>
-						</td>
-						<td class="tdHistorial">
-							<label class="lbl">Tipo de Tarifa</label>
-						</td>
-						<td class="tdHistorial">
-							<label class="lbl">Valor abonado</label>
-						</td>
-						<td class="tdHistorial">
-							<label class="lbl">Kilometros Sumados</label>
-						</td>
-					</tr>
 				</table>
 				<div id="contenedor_info">
 					<table>
 						<tr>
 							<td>
-								<label class="lbl">Cantidad total de kilometros sumados:</label>	
+								<?=$lblMensaje;?>
 							</td>
 							<td>
-								<b><label class="lbl" id="lblKilometros">0 kms</label></b>
+								<b><?=$lblPuntos;?></b>
 							</td>
 						</tr>
 					</table>
