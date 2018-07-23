@@ -2,10 +2,10 @@
 session_start();
 include_once("BaseDeDatos.class.php");
 $bdd = new BaseDeDatos("promocion");
-if (isset($_GET['tarifa'])) 
+if (isset($_GET['tarifa'])){
         $consultaFrecuente = "SELECT pasajero_frecuente FROM usuarios WHERE dni = ". $_SESSION['dni'];
         $reultadoFrecuente = $bdd->consultar($consultaFrecuente);
-        $frecuente = $bdd->devolverValor($reultadoFrecuente, "pasajero_frecuente");{
+        $frecuente = $bdd->devolverValor($reultadoFrecuente, "pasajero_frecuente");
     if (explode("=", $_GET['tarifa'])[0] == 4 && $frecuente == 0) {
         echo "NOFRECUENTE";
     }else {
@@ -61,8 +61,8 @@ if (isset($_GET['tarifa']))
             }
             if (!$compraFail) {
                 $consultaCompra = 'INSERT INTO compras (id_viaje, dni_usuario, tipo_tarifa, valor_pagado) VALUES (('.$consultaSiExisteViaje.'), "'. $_SESSION['dni'] .'", "'. explode("=",$_GET['tarifa'])[0] .'", "'. explode("=",$_GET['tarifa'])[1] .'");';
-                $bdd->insertar($consultaCompra);
                 if ($frecuente == 1) {
+                        $compra = false;
                         $consultaPuntos = 'SELECT puntos FROM usuarios WHERE dni = '. $_SESSION['dni'];
                         $consulta = $bdd->consultar($consultaPuntos);
                         $puntos = floatval($bdd->devolverValor($consulta, "puntos"));
@@ -70,10 +70,13 @@ if (isset($_GET['tarifa']))
                         if (floatval(explode("=", $_GET['tarifa'])[1]) <= $puntos) {
                             $puntos -= floatval(explode("=", $_GET['tarifa'])[1]);
                             $_SESSION['sumados'] = "Se descontaron ". explode("=", $_GET['tarifa'])[1] ." puntos de su cuenta";
+                            $compra = true;
                         }else {
+                            $compra = false;
                             echo "PUNTOSFALTANTES";
                         }
                     }else {
+                        $compra = true;
                         switch (explode("=", $_GET['tarifa'])[0]) {
                             case "1":
                                 $puntos = floatval(explode("=", $_GET['tarifa'])[1]) * 0.25;
@@ -90,9 +93,13 @@ if (isset($_GET['tarifa']))
                         $_SESSION['sumados'] = $puntos;
                     }
                 }else {
+                    $compra = true;
                     $_SESSION['sumados'] = "No suma puntos, uste no es cliente frecuente.";
                 }
                 $consultaSumarPuntos = 'UPDATE usuarios SET puntos = '.$puntos.' WHERE usuarios.dni = '. $_SESSION['dni'];
+                if ($compra) {
+                    $bdd->insertar($consultaCompra);
+                }
                 $bdd->insertar($consultaSumarPuntos);
             }
         }

@@ -1,16 +1,26 @@
 function enviarCompra() {
-    var tabla = ["slctOrigen","slctDestino","slctHora","slctTarifa"];
+    var tabla = ["slctOrigen","slctDestino","slctTarifa"];
     var msj = document.getElementById("lblError");
     var consistidoFecha = false;
     var consistidoCampos = false;
-    var fecha = Date.parse(document.getElementById("fecha").value);
+    var consistidoHora = false;
+    var cad = document.getElementById("fecha").value;
+    var fecha = Date.parse(cad);
+    var hora = document.getElementById("slctHora").value;
     var fechaActual = new Date();
-    if (fecha < fechaActual) {
+    if (!(fecha < fechaActual) && cad != "") {
+        consistidoFecha = true;
+    }else{
         msj.innerHTML = "Ingrese una fecha correcta";
         msj.style.color = "red";
         consistidoFecha = false;
+    }
+    if (hora == "Elija el horario" || hora == "") {
+        msj.innerHTML = "Seleccione un horario.";
+        msj.style.color = "red";
+        consistidoHora = false;
     }else{
-        consistidoFecha = true;
+        consistidoHora = true;
     }
     for (let index = 0; index < tabla.length; index++) {
         if(document.getElementById(tabla[index]).value == 0) {
@@ -22,7 +32,7 @@ function enviarCompra() {
             consistidoCampos = true;
         }
     }
-    if (consistidoFecha && consistidoCampos) {
+    if (consistidoFecha && consistidoCampos && consistidoHora) {
         msj.innerHTML = "";
         comprar();
     }

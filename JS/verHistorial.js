@@ -6,8 +6,11 @@ function cargarHistorial() {
     peticion.onreadystatechange = revisarMail;
     function revisarMail() {
         if(peticion.readyState == 4) {
-            console.log(peticion.responseText);
-            document.getElementById("tblHistorial").innerHTML = peticion.responseText; 
+            if(peticion.responseText == "NULL"){
+                document.getElementById("tblHistorial").innerHTML = "No tiene compras realizadas.";
+            }else{
+                document.getElementById("tblHistorial").innerHTML = peticion.responseText; 
+            }
         }
     }
 }
