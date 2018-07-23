@@ -3,6 +3,7 @@
 	include_once("../php/BaseDeDatos.class.php");
 	$bdd = new BaseDeDatos("promocion");
 	$_SESSION['nombre']= $bdd->devolverValor($bdd->consultar("SELECT nombres FROM usuarios WHERE dni = ".$_SESSION['dni']),"nombres");
+	$_SESSION['apellido']= $bdd->devolverValor($bdd->consultar("SELECT apellidos FROM usuarios WHERE dni = ".$_SESSION['dni']),"apellidos");
 	$tarifa = $bdd->devolverValor($bdd->consultar("SELECT tipo_tarifa FROM tipo_tarifa WHERE id_tarifa = ".explode("=", $_POST['slctTarifa'])[0]),"tipo_tarifa");
 	if ($tarifa == "frecuente") {
 		$tar = explode("=", $_POST['slctTarifa'])[1]."kms";
@@ -24,17 +25,17 @@
 	<header>
 		<img src="../img/logo.png" id="logo">
 		<h1>Gracias por viajar<br>con nosotros!</h1>
-		<h3>Esta es tu tarjeta de embarque, <br> por favor presentala al personal antes de ingresar al colectivo</h3>
+		<h3>Este es tu boleto, por favor<br>presentalo al personal antes de ingresar al colectivo</h3>
 	</header>
 	<section>
 		<article>
-			<table>
+			<center><table>
 				<tr>
 					<td>
 						<label>Pasajero:</label>
 					</td>
 					<td>
-						<label id="lblPasajero"><?=$_SESSION['nombre'];?></label>
+						<label id="lblPasajero"><?=$_SESSION['nombre']." ".$_SESSION['apellido'];?></label>
 					</td>
 				</tr>
 				<tr>
@@ -98,7 +99,7 @@
 						<label>Kilometros sumados:</label>
 					</td>
 					<td>
-						<label id="lblKilometros"><?=$_SESSION['sumados'];?></label>
+						<label id="lblKilometros"><?=$_SESSION['sumados']." kms";?></label>
 					</td>
 				</tr>
 				<tr>
@@ -109,7 +110,7 @@
 						<input type="button" id="btnVolverUser" value="Volver" onclick="volverUser();" class="Boton">
 					</td>
 				</tr>
-			</table>
+			</table></center>
 		</article>
 	</section>
 	<footer>
