@@ -28,6 +28,21 @@ function enviarCompra() {
     }
 }
 
+function mostrarErrorCompra(num){
+    document.getElementById("errorCompra").value=1;
+
+    if(num==1){
+        document.getElementById("mensajeErrorCompra").innerHTML= "No quedan asientos disponibles";
+    }else if(num==2){
+        document.getElementById("mensajeErrorCompra").innerHTML= "Debe ser pasajero frecuente <br> para elegir esta tarifa";
+    }else if(num==3){
+        document.getElementById("mensajeErrorCompra").innerHTML= "Su cantidad de kilometros es <br> insuficiente para realizar la compra";
+    }
+
+    document.getElementById("contenedor_errorCompra").style.visibility= "visible";
+    document.getElementById("contenedor_cuerpo").style.visibility= "hidden";
+}
+
 function comprar() {
     var peticion = ObtenerXHR();
     var enviar = "../php/comprar.php?origen=" + document.getElementById("slctOrigen").value + "&destino=" + document.getElementById("slctDestino").value + "&fecha=" + document.getElementById("fecha").value + "&horario=" + document.getElementById("slctHora").value + "&tarifa=" + document.getElementById("slctTarifa").value;
@@ -39,12 +54,15 @@ function comprar() {
             switch (peticion.responseText) {
                 case "FAIL":
                     //ERR no hay asientos
+                    mostrarErrorCompra(1);
                     break;
                 case "NOFRECUENTE":
                     //ERR no puede comprar con puntos
+                    mostrarErrorCompra(2);
                     break;
                 case "PUNTOSFALTANTES":
                     //ERR no puede comprar faltan puntos
+                    mostrarErrorCompra(3);
                     break;
                 default:
                     document.getElementById("formularioCompra").submit();

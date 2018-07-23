@@ -57,7 +57,7 @@ article{
 #contenedor_ingresar{
 	background-color: rgba(0,0,0,.6);
 	width: 25%;
-	height: 51%;
+	height: 55%;
 	position: absolute;
 	margin-left: 37.5%;
 	margin-top: 10%;
@@ -154,7 +154,7 @@ article{
 	position: absolute;
 	background-color: rgba(0,0,0,.6);
 	width: 30%;
-	height: 41%;
+	height: 43%;
 	margin-left: 20%;
 	margin-top: 10%;
 	border-radius: 20px;
@@ -326,10 +326,12 @@ article{
 }
 
 #contenedor_info{
-	width: 100%;
+	width: 70%;
 	height: 6%;
-	margin-top: 41.6%;
+	margin-top: 40%;
+	margin-left: 15%;
 	border-top: 1px white solid;
+	position: absolute;
 }
 
 #contenedor_footer{
@@ -371,6 +373,38 @@ article{
 	margin-top: 10%;
 	position: absolute;
 	visibility: hidden;
+}
+
+#contenedor_errorCompra{
+	width: 25%;
+	height: 19%;
+	background-color: rgba(0,0,0,.6);
+	border-radius: 6px;
+	border: 1px white solid;
+	padding: 1%;
+	text-align: center;
+	margin-left: 36.6%;
+	margin-top: 10%;
+	position: absolute;
+	visibility: hidden;
+}
+
+#mensajeErrorCompra{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	color: white;
+}
+
+#lblError, #lblErrorRegistro{
+	font-family: 'Arial', sans-serif;
+	font-size: 14px;
+	font-style: bold;
+}
+
+#tblHistorial{
+	height: 93.5%;
+	display: block;
+	overflow-y: scroll; 
 }
 
 /*

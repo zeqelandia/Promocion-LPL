@@ -11,6 +11,13 @@ function editarPerfil(){
 	artHistorial.style.visibility= "hidden";
 	artPerfil.style.visibility= "visible";
 
+	if(document.getElementById("cambiosRealizados").value==1){
+		document.getElementById("contenedor_confirmacionCambios").style.visibility= "visible";
+	}
+
+	document.getElementById("contenedor_cuerpo").style.visibility= "hidden";
+	document.getElementById("contenedor_errorCompra").style.visibility= "hidden";
+
 	document.getElementById("contenedor_footer").style.visibility= "visible";
 }	
 
@@ -23,6 +30,12 @@ function comprarTickets(){
 	artHistorial.style.visibility= "hidden";
 	artPerfil.style.visibility= "hidden";
 
+	if(document.getElementById("errorCompra").value==1){
+		document.getElementById("contenedor_errorCompra").style.visibility= "visible";
+	}else{
+		document.getElementById("contenedor_cuerpo").style.visibility= "visible";
+	}
+
 	document.getElementById("contenedor_footer").style.visibility= "visible";
 }
 
@@ -34,6 +47,9 @@ function historialCompras(){
 	artCompra.style.visibility= "hidden";
 	artHistorial.style.visibility= "visible";
 	artPerfil.style.visibility= "hidden";
+	document.getElementById("contenedor_cuerpo").style.visibility= "hidden";
+	document.getElementById("contenedor_confirmacionCambios").style.visibility= "hidden";
+	document.getElementById("contenedor_errorCompra").style.visibility= "hidden";
 
 	document.getElementById("contenedor_footer").style.visibility= "hidden";
 	cargarHistorial();
@@ -41,6 +57,7 @@ function historialCompras(){
 
 function aceptarCambios(){
 	document.getElementById("contenedor_confirmacionCambios").style.visibility= "hidden";
+	document.getElementById("cambiosRealizados").value= 0;
 	document.getElementById("contenedor_editarPerfil").style.visibility= "visible";
 
 	location.href="user.php";
@@ -48,5 +65,13 @@ function aceptarCambios(){
 
 function mostrarConfirmacion(){
 	document.getElementById("contenedor_confirmacionCambios").style.visibility= "visible";
+	document.getElementById("cambiosRealizados").value=1;
 	document.getElementById("contenedor_editarPerfil").style.visibility= "hidden";
+}
+
+function aceptarErrorCompra(){
+	document.getElementById("contenedor_errorCompra").style.visibility= "hidden";
+	document.getElementById("contenedor_cuerpo").style.visibility= "visible";
+
+	document.getElementById("errorCompra").value = 0;
 }

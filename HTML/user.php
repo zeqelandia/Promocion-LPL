@@ -136,7 +136,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td colspan="2">
 									<label id="lblError"></label>
 								</td>
 							</tr>
@@ -149,6 +149,11 @@
 					<label class="tag">desde</label>
 					<label id="lblPrecio" class="tag">600$</label>
 				</div>
+		</div>
+		<div id="contenedor_errorCompra">
+			<input type="hidden" id="errorCompra" value="0">
+			<h2 id="mensajeErrorCompra"></h2>
+			<input type="button" id="btnErrorCompra" value="Aceptar" class="Boton" onclick="aceptarErrorCompra();">
 		</div>
 		</article>
 		<article id="artPerfil">
@@ -234,6 +239,7 @@
 					</form>
 				</div>
 				<div id="contenedor_confirmacionCambios">
+					<input type="hidden" id="cambiosRealizados" value="0">
 					<h2 class="lbl">Cambios realizados con exito</h2>
 					<input type="button" id="btnAceptarCambios" onclick="aceptarCambios();" class="Boton" value="Aceptar">
 				</div>
@@ -251,18 +257,18 @@
 			<div id="contenedor_historial">
 				<table id="tblHistorial" class="titulo">
 				</table>
-				<div id="contenedor_info">
-					<table>
-						<tr>
-							<td>
-								<?=$lblMensaje;?>
-							</td>
-							<td>
-								<b><?=$lblPuntos;?></b>
-							</td>
-						</tr>
-					</table>
-				</div>
+			</div>
+			<div id="contenedor_info">
+				<table>
+					<tr>
+						<td>
+							<?=$lblMensaje;?>
+						</td>
+						<td>
+							<b><?=$lblPuntos;?></b>
+						</td>
+					</tr>
+				</table>
 			</div>
 		</article>
 	</section>

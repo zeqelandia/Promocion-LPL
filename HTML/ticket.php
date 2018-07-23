@@ -101,10 +101,15 @@
 						<label id="lblKilometros"><?=$_SESSION['sumados'];?></label>
 					</td>
 				</tr>
+				<tr>
+					<td class="mitad">
+						<input type="button" id="btnImprimir" value="Imprimir" onclick="imprimir();" class="Boton">
+					</td>
+					<td class="mitad">
+						<input type="button" id="btnVolverUser" value="Volver" onclick="volverUser();" class="Boton">
+					</td>
+				</tr>
 			</table>
-		</article>
-		<article>
-			<input type="button" id="btnImprimir" value="Imprimir" onclick="imprimir();" class="Boton">
 		</article>
 	</section>
 	<footer>

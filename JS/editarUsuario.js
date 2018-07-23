@@ -36,6 +36,7 @@ function revisarMail() {
 
 function mostrarConfirmacion(){
     document.getElementById("contenedor_confirmacionCambios").style.visibility= "visible";
+    document.getElementById("cambiosRealizados").value=1;
     document.getElementById("contenedor_editarPerfil").style.visibility= "hidden";
 }
 
