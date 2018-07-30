@@ -43,7 +43,7 @@
 	<script type="text/javascript" src="../JS/realizarCompra.js"></script>
 	<script type="text/javascript" src="../JS/verHistorial.js"></script>
 </head>
-<body onload="publicidad();">
+<body onload="publicidad(); activarNavegacion(1)">
 	<header>
 		<nav>
 			<div id="navegacion">
@@ -54,7 +54,7 @@
 					<table id="tblUsuario">
 						<tr>
 							<td>
-								<label class="lbl">Bienvenido <?=$_SESSION['userLogin'];?></label>
+								<label class="lbl">Bienvenido <b><?=$_SESSION['userLogin'];?></b></label>
 							</td>
 							<td class="tdUsuario" onclick="comprarTickets();">
 								<label class="lbl">Comprar Tickets</label>
@@ -76,7 +76,7 @@
 	</header>
 	<section id="section">
 		<article id="artCompraUser">
-		<div class="contenedor_titulo">
+		<div class="contenedor_titulo" id="divTitulo">
 			<table class="titulo tblTitulo">
 				<tr>
 					<td>
@@ -141,6 +141,8 @@
 								</td>
 							</tr>
 						</table>
+						<input type="hidden" name="inptAsiento" id="inptAsiento">
+						<input type="hidden" name="idViaje" id="idViaje">
 					</form>
 				</div>
 				<div id="contenedor_pub">
@@ -155,6 +157,39 @@
 			<h2 id="mensajeErrorCompra"></h2>
 			<input type="button" id="btnErrorCompra" value="Aceptar" class="Boton" onclick="aceptarErrorCompra();">
 		</div>
+		<center><div id="contenedor_asientos">
+			<input type="hidden" id="navegacion" value="1">
+			<center><div id="contenedor_tituloAsientos">
+				<h2>Elija su asiento</h2>
+			</div></center>
+			<div id="contenedor_asientosVip" class="asientos">
+				<label class="lbl">Tarifa Ejecutiva<br>Sector Inferior</label><br><br>
+				<label class="lbl">Parte delantera</label>
+				<table id="tblVip" class="tblAsientos">	
+					
+				</table>
+				<label class="lbl">Parte Trasera</label>
+			</div>
+			<div id="contenedor_asientosPromocionales" class="asientos">
+				<label class="lbl">Tarifa Promocional<br>Sector superior</label><br><br>
+				<label class="lbl">Parte delantera</label>
+				<table id="tblPromocional" class="tblAsientos">	
+					
+				</table>
+				<label class="lbl">Parte Trasera</label>
+			</div>
+			<div id="contenedor_asientosNormales" class="asientos">
+				<label class="lbl">Tarifa Normal<br>Sector superior</label><br><br>
+				<label class="lbl">Parte delantera</label>
+				<table id="tblNormal" class="tblAsientos">	
+					
+				</table>
+				<label class="lbl">Parte Trasera</label>
+			</div>
+			<div id="contenedor_botonesAsientos">
+				<input type="button" id="btnAsientos" value="Volver" class="Boton" onclick="volverAsientos(); activarNavegacion(1);">
+			</div>
+		</div></center>
 		</article>
 		<article id="artPerfil">
 				<div class="contenedor_titulo">
